@@ -1,0 +1,39 @@
+
+
+<mat-card>
+  <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>yeni işlem sayfası </mat-card-title>
+      <mat-card-subtitle>Lütfen bilgileri eksiksiz doldurun.. İşlem kaydedildikten sonra zincire dahil olması bir kaç dakika sürebilir...</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form class="example-form" #userForm="ngForm" (ngSubmit)="onSubmit()" >
+
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="userName" [(ngModel)]="transactionModel.userName" name="userName">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="chassis No" [(ngModel)]="transactionModel.chassisNo" name="chassisNo">                
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="km" [(ngModel)]="transactionModel.km" name="km" type="number">
+                </mat-form-field>
+          
+                  <mat-form-field class="example-full-width">
+                      <input matInput placeholder="transaction" [(ngModel)]="transactionModel.transaction" name="transaction">
+                    </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="comment" [(ngModel)]="transactionModel.comment" name="comment">
+                        </mat-form-field>
+
+            <button mat-raised-button type="submit" color="primary"> kaydet </button>
+          </form>  
+
+    </mat-card-content>
+
+
+  </mat-card>

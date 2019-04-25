@@ -1,0 +1,54 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>CarChain</h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <h3>Blockchain Tabanlı Araç Hasar Kaydı Uygulaması</h3>
+    </mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
+
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title> CarChain Nedir? </mat-card-title>
+      <mat-card-subtitle>  </mat-card-subtitle>
+    </mat-card-header>
+   <img mat-card-image src="https://www.archer-soft.com/sites/default/files/images/blog/2018/04/351.png" alt="carchain image">
+   <mat-card-content>
+      <p>
+        Şu ana kadar yapılmış en güvenli veri tabanı olarak adlandırılan blockchain, temelde Bitcoin gibi sanal para işlemlerinin kaydının tutulabileceği bir veri tabanı oluşturmak için üretilmiş bir yazılımdır.Bu yazılım sayesinde depolanan verilerle, kendisinden önceki tüm işlemlerin kaydının bulunduğu işlemler zincirinin sonuna eklenmek suretiyle, ilgili işlemin veritabanı üzerine eşzamanlı olarak kaydedilmesi sağlanır.Ancak Blockchain’in en önemli özelliği diğer veri tabanı sistemlerindeki gibi tek bir merkezde kayıtlı olmamasıdır.
+      </p>
+    </mat-card-content>
+
+    <mat-card-content>
+      <p>
+        Günümüzde ikinci el araç alım/satımı oldukça fazla ve bu alım/satımın en az %66’sı bireysel olarak gerekleşiyor(taksit.com 2017 verilerine göre).İnsanlar almak istedikleri araçların daha önceden herhangi bir kazası var mıydı? Yada ne tür işlemler gördü? gibi soruların cevabını genelde satın aldıkları kişiden öğrenir veya sanayiye gidip işinin ehli olan ustalara kontrol ettirir veya sigorta şirketlerinin ücretli olarak sunduğu araç hasar kaydına bakarlar.
+      </p>
+    </mat-card-content>
+
+    <mat-card-content>
+      <p>
+        Bu proje (CarChain) ile araçların tüm geçmiş bilgilerini (arıza, kaza, tadilat  vb.) Blockchain tabanlı sistemde saklayarak istenildiği zaman araçların şase numarasını girerek sorgulama yapabileceği bir yazılım geliştirilecek, böylece internet erişimi olan herkes ücretsiz bir şekilde alacağı arabanın tüm bilgilerinin dökümanına erişebilecektir.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button> </button>
+      <button mat-button> </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        Nasıl Çalışır?
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      CarChain uygulaması Blockchain tabanlı olduğu için, blockchain çalışma mantığı üzerinde işler. Uygulamada özel anahtar(private key) kullanılmadı hangi işlemi hangi kullanıcı gerçekleştirdiği  kullanıcı adı ile görünmektedir. Fakat kullanıcıya ait diğer bilgiler veri tabanında tutulup sorgu ekranında verilmiyor. Böylece kullanıcının kim olduğu sistem tarafından biliniyor fakat diğer kullanıcılar tarafından bilinmiyor. Kullanıcı bilgilerinin sistem tarafından bilinme gereksinimi yanlış bilgilendirme yapılması durumunda yapan kişi hakkında bilgi edinilmesi için.
+  Uygulama veritabanında 3 collection(tablo) tutar. Bunlar kullanıcılar, araçlar ve bloklarzinciri. Kullanıcı herhangi bir araç sorgulamak için sisteme kayıt olmak zorunda değildir isteyen herkes istediği araba bilgilerine şase numarasını girerek ulaşabilir. Fakat bir işlem kaydı yapabilmesi için o kullanıcının ve aracın sisteme kaydedilmesi gerekmektedir.
+  Sistem belirli bir işlem sayısına ulaştığında yeni bir blog yaratır ve işlemleri içerisinde kaydeder daha sonra zincire ekler.Bu aşamada baştan sona bütün zincirler taranır ve hata olup olmadığı kontrol edilir. Eğer bir blokta hata varsa diğer node’lardan doğrulanmış olan zinciri alır ve ona ekler. Böylece hatalı olan ya da hacklenmiş olan bir veri tabanı varsa o anda silinir ve doğru olan veritabanı yerine konulur. Dağıtık verinin en önemli avantajı budur.
+
+    </mat-card-content>
+  </mat-card>

@@ -1,0 +1,42 @@
+
+<mat-card>
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Araç şase numarasını girin..</mat-card-title>
+        <mat-card-subtitle> sorgulama sonucu birkaç saniye sürebilir..</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+          <form class="example-form" #queryForm="ngForm" (ngSubmit)="getTransaction()">
+
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="chassis number" [(ngModel)]="queryChassisNo" name="chassisNo">
+                </mat-form-field>
+
+              <button mat-raised-button color="primary"> search </button>
+            </form>  
+
+      </mat-card-content>
+
+</mat-card>
+
+
+
+<div *ngIf="blocks">
+  <div *ngFor="let item of blocks">
+      <mat-card  class="example-full-width" *ngFor="let trans of item.transactions">
+          <mat-card-header >
+            <mat-card-title> <p> time: {{trans.time}} </p> </mat-card-title>
+            <mat-card-subtitle> <p> transaction: {{trans.transaction }} </p> </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p> user: {{trans.user}} </p>
+            <p> km: {{trans.km }} </p>
+            <p> comment: {{trans.comment }} </p>
+        
+          </mat-card-content>
+        </mat-card>
+  </div>
+
+</div>
+  

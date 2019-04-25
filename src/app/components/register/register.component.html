@@ -1,0 +1,61 @@
+<mat-card>
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Yeni Arac Ekle</mat-card-title>
+        <mat-card-subtitle>Arac eklemek için bilgileri eksiksiz doldur. </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+          <form class="example-form" #carForm="ngForm" (ngSubmit)="onSubmit()"> 
+
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="car chassis number " [(ngModel)]="carModel.saseNo" name="saseNo">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="brand of car" [(ngModel)]="carModel.marka" name="marka">
+                  </mat-form-field>
+
+                  <mat-form-field class="example-full-width">
+                      <input matInput placeholder="model of car" [(ngModel)]="carModel.model" name="model">
+                    </mat-form-field>
+            
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="series " [(ngModel)]="carModel.seri" name="seri">
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                          <mat-select placeholder="fuel type"     [(ngModel)]="carModel.yakit" name="yakit">
+                            <mat-option *ngFor="let item of yakit" [value]="item">
+                              {{item}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="body type" [(ngModel)]="carModel.kasaTipi" name="kasaTipi">
+                          </mat-form-field>
+
+                          <mat-form-field class="example-full-width">
+                              <input matInput placeholder="engine vol." [(ngModel)]="carModel.motorHacmi" name="motorHacmi">
+                            </mat-form-field>
+
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="color" [(ngModel)]="carModel.renk" name="renk">
+                              </mat-form-field>
+
+                              <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="km" [(ngModel)]="carModel.km" name="km">
+                                </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="comment . ." [(ngModel)]="carModel.comment" name="comment"></textarea>
+              </mat-form-field>
+
+              <button mat-raised-button color="primary" type="submit"> save car </button>
+            </form>  
+
+      </mat-card-content>
+
+
+    </mat-card>

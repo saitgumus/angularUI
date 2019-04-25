@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-header></app-header>
+
+<mat-tab-group>
+  <mat-tab label="home">
+    <app-home> </app-home>
+  </mat-tab>
+
+
+  <mat-tab label="new Transaction">
+    <h1>Yeni İşlem Kaydı..</h1>
+    <app-transaction></app-transaction>
+  </mat-tab>
+
+  <mat-tab label="new Car">
+    <h1>Yeni Kayıt Yapabilceğin sayfa</h1>
+    <app-register></app-register>
+  </mat-tab>
+  
+
+  <mat-tab label="new User">
+    <h1>Yeni Kayıt Yapabilceğin sayfa</h1>
+    <app-usersave></app-usersave>
+  </mat-tab>
+
+  <mat-tab label="query">
+    <h1>Araç Sorgulama Sayfası</h1>
+    <app-query></app-query>
+  </mat-tab>
+</mat-tab-group>
+
+
+<router-outlet></router-outlet>
