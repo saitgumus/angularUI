@@ -67,7 +67,7 @@ export class TransactionComponent implements OnInit {
    validUser (param:number){
      return new Promise( (resolve,reject)=>{
        if(param==1){
-        this.userService.userValid(this.transactionModel.userName).subscribe( r=>{
+        this.userService.userValid(this.transactionModel.user).subscribe( r=>{
           resolve (r["durum"]);
          })
        }else{
