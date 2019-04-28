@@ -17,13 +17,19 @@ import { reject } from 'q';
 export class TransactionComponent implements OnInit {
 
 
+  server_uri = 'https://node-test-238108.appspot.com';
+
+  nodes = ['https://node-test2-238819.appspot.com',
+          'https://node-test-238108.appspot.com',
+          'http://localhost:8080'];
+
+
  transactionModel:any = {};
   constructor(private transactionService: TransactionService,private carService:CarService,private userService:UserService) { }
 
   ngOnInit() {
 
   }
-
 
 
 
@@ -35,7 +41,7 @@ export class TransactionComponent implements OnInit {
       }else alert('araç kayıtlarda bulunamadı..');
     }).then( (data)=>{
       if(data == 1){
-        this.transactionService.sendTransaction(this.transactionModel);
+        this.transactionService.sendTransaction(this.transactionModel,this.server_uri);
         console.log('islem alındı');
       }else alert('kullanıcı kayıtlarda bulunamadı.');
     }).catch( (mesaj)=>{
@@ -46,11 +52,12 @@ export class TransactionComponent implements OnInit {
 
 
 
+
 //araç doğrulama
     validCar (param:number) {
         return new Promise( (resolve,reject)=>{
           if(param == 1){
-            this.carService.validChassisNo(this.transactionModel.chassisNo).subscribe( r=>{
+            this.carService.validChassisNo(this.transactionModel.chassisNo,this.server_uri).subscribe( r=>{
               resolve(r["durum"]);
             })
           }else{
@@ -67,7 +74,7 @@ export class TransactionComponent implements OnInit {
    validUser (param:number){
      return new Promise( (resolve,reject)=>{
        if(param==1){
-        this.userService.userValid(this.transactionModel.user).subscribe( r=>{
+        this.userService.userValid(this.transactionModel.user,this.server_uri).subscribe( r=>{
           resolve (r["durum"]);
          })
        }else{

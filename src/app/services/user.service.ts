@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
 
-  uri = environment.path+'/newuser';
+  //uri = environment.path+'/newuser';
 
 
 
@@ -17,19 +17,19 @@ export class UserService {
 
   
 
-  setUser(user:User){
+  setUser(user:User,uri){
  
     let _headers = new HttpHeaders();
     _headers.append("Content-Type","application/json");
-    this.http.post(this.uri,user,{headers:_headers}).subscribe();
+    this.http.post(uri+'/newuser',user,{headers:_headers}).subscribe();
   }
 
 
-  userValid(userName): Observable<{}>{
+  userValid(userName,uri): Observable<{}>{
     let _headers = new HttpHeaders();
     _headers.append("Content-Type","application/json");
 
-    return this.http.post<{}>(this.uri+'/valid',{"userName":userName},{headers:_headers})
+    return this.http.post<{}>(uri+'/newuser/valid',{"userName":userName},{headers:_headers})
     
   }
 }

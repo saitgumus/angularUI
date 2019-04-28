@@ -3,7 +3,15 @@
   <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>Aramıza Hoşgeldin!</mat-card-title>
-      <mat-card-subtitle>Lütfen bilgileri eksiksiz doldurun..</mat-card-subtitle>
+      <mat-card-subtitle>Lütfen bilgileri eksiksiz doldurun ve bir server seçin..
+
+      <mat-select placeholder="select a server" 
+      [(ngModel)]="server_uri" name="uri">
+          <mat-option *ngFor="let item of nodes" [value]="item">
+            {{item}}
+          </mat-option>
+  </mat-select>
+      </mat-card-subtitle>
     </mat-card-header>
 
     <mat-card-content>

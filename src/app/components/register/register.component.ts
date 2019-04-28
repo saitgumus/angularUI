@@ -15,6 +15,12 @@ export class RegisterComponent implements OnInit {
 
   yakit = ['benzin','dizel','benzin+lpg'];
 
+
+  server_uri = 'https://node-test-238108.appspot.com';
+
+  nodes = ['https://node-test2-238819.appspot.com','https://node-test-238108.appspot.com','http://localhost:8080'];
+
+
   constructor(private carService:CarService) { }
 
 
@@ -22,7 +28,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(){
-    this.carService.saveNewCar(this.carModel)
+    this.carService.saveNewCar(this.carModel,this.server_uri)
   }
 
 

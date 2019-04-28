@@ -1,13 +1,18 @@
-import {Component, NgModule } from '@angular/core'
+import {Component, OnInit, OnChanges} from '@angular/core'
+
+
 
 
 @Component({
     selector: "app-header",
     templateUrl: './header.component.html',
-    styleUrls:[]
+    styleUrls:['./header.component.css']
 })
 
-export class HeaderComponent{
+
+export class HeaderComponent {
+
+    
 constructor(){
 
 }

@@ -2,10 +2,19 @@
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>Yeni Arac Ekle</mat-card-title>
-        <mat-card-subtitle>Arac eklemek için bilgileri eksiksiz doldur. </mat-card-subtitle>
+        <mat-card-subtitle>Arac eklemek için bilgileri eksiksiz doldur. bir server seç.
+          
+            <mat-select placeholder="select a server" 
+            [(ngModel)]="server_uri" name="uri">
+                <mat-option *ngFor="let item of nodes" [value]="item">
+                  {{item}}
+                </mat-option>
+              </mat-select>
+             </mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-content>
+
           <form class="example-form" #carForm="ngForm" (ngSubmit)="onSubmit()"> 
 
               <mat-form-field class="example-full-width">

@@ -13,6 +13,10 @@ export class UsersaveComponent implements OnInit {
 
   userModel = new User('','','','','');
 
+  server_uri = 'https://node-test-238108.appspot.com';
+
+  nodes = ['https://node-test2-238819.appspot.com','https://node-test-238108.appspot.com','http://localhost:8080'];
+
   constructor(private userService:UserService) { 
     
   }
@@ -24,7 +28,7 @@ export class UsersaveComponent implements OnInit {
 
   onSubmit(){
     //console.log(this.userModel);
-    this.userService.setUser(this.userModel);
+    this.userService.setUser(this.userModel,this.server_uri);
   }
 
 }

@@ -19,12 +19,20 @@ export class QueryComponent implements OnInit {
   
   blocks:any;
 
+
+    server_uri = 'https://node-test-238108.appspot.com';
+
+    nodes = ['https://node-test2-238819.appspot.com',
+            'https://node-test-238108.appspot.com',
+            'http://localhost:8080'];
+    
+
   ngOnInit() {
   }
 
 
   getTransaction(){
-    this.transactionService.getTransaction({"chassisNo":this.queryChassisNo}).subscribe( (r)=>{
+    this.transactionService.getTransaction({"chassisNo":this.queryChassisNo},this.server_uri).subscribe( (r)=>{
       this.blocks = r;
     })
   }

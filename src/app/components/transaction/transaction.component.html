@@ -4,7 +4,16 @@
   <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>yeni işlem sayfası </mat-card-title>
-      <mat-card-subtitle>Lütfen bilgileri eksiksiz doldurun.. İşlem kaydedildikten sonra zincire dahil olması bir kaç dakika sürebilir...</mat-card-subtitle>
+      <mat-card-subtitle>Lütfen bilgileri eksiksiz doldurun.. İşlem kaydedildikten sonra zincire dahil olması bir kaç dakika sürebilir...
+
+      <mat-select placeholder="select a server" 
+      [(ngModel)]="server_uri" name="uri">
+          <mat-option *ngFor="let item of nodes" [value]="item">
+            {{item}}
+          </mat-option>
+  </mat-select>
+      </mat-card-subtitle>
+
     </mat-card-header>
 
     <mat-card-content>

@@ -12,28 +12,28 @@ import { environment } from 'src/environments/environment';
 })
 export class TransactionService {
 
-  uri = environment.path;
+  //uri = environment.path;
 
   constructor(private http:HttpClient) { }
 
 
   
-  sendTransaction(transaction:Transaction){
+  sendTransaction(transaction:Transaction,uri){
     let _headers = new HttpHeaders();
     _headers.append("Content-Type","application/json");
 
-    this.http.post(this.uri+'/newTransaction',transaction,{headers: _headers}).subscribe(r => {
+    this.http.post(uri+'/newTransaction',transaction,{headers: _headers}).subscribe(r => {
       console.log(r);
     });
   }
 
 
 
-  getTransaction(data):Observable<Block[]>{
+  getTransaction(data,uri):Observable<Block[]>{
     let _headers = new HttpHeaders();
     _headers.append("Content-Type","application/json");
 
-    return this.http.post<Block[]>(this.uri+'/queryTransaction',data,{headers:_headers});
+    return this.http.post<Block[]>(uri+'/queryTransaction',data,{headers:_headers});
   }
 
 }

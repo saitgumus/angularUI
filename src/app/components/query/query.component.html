@@ -3,7 +3,18 @@
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>Araç şase numarasını girin..</mat-card-title>
-        <mat-card-subtitle> sorgulama sonucu birkaç saniye sürebilir..</mat-card-subtitle>
+        <mat-card-subtitle> sorgulama sonucu birkaç saniye sürebilir..
+          bir server seç
+
+            <mat-select placeholder="select a server" 
+            [(ngModel)]="server_uri" name="uri">
+                <mat-option *ngFor="let item of nodes" [value]="item">
+                  {{item}}
+                </mat-option>
+              </mat-select>
+        </mat-card-subtitle>
+        
+
       </mat-card-header>
 
       <mat-card-content>
