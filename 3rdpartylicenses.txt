@@ -361,14 +361,14 @@ MIT
 
 @angular/material/button
 
+@angular/material/core
+
 @angular/forms
 MIT
 
-@angular/material/form-field
-
-@angular/material/core
-
 @angular/material/select
+
+@angular/material/form-field
 
 zone.js
 MIT
