@@ -37,8 +37,8 @@
   <div *ngFor="let item of blocks">
       <mat-card  class="example-full-width" *ngFor="let trans of item.transactions">
           <mat-card-header >
-            <mat-card-title> <p> time: {{trans.time}} </p> </mat-card-title>
-            <mat-card-subtitle> <p> transaction: {{trans.transaction }} </p> </mat-card-subtitle>
+            <mat-card-title> <p> time: {{trans.transaction}} </p> </mat-card-title>
+            <mat-card-subtitle> <p> transaction: {{trans.time }} </p> </mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <p> user: {{trans.user}} </p>
