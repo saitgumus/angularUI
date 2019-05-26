@@ -15,7 +15,7 @@ export class UsersaveComponent implements OnInit {
 
   server_uri = 'https://node-test-238108.appspot.com';
 
-  nodes = ['https://node-test2-238819.appspot.com','https://node-test-238108.appspot.com','http://localhost:8080'];
+  nodes = ['https://node-test2-238819.appspot.com','https://node-test-238108.appspot.com','http://localhost:8080','https://node-test3.appspot.com'];
 
   constructor(private userService:UserService) { 
     

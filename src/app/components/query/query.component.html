@@ -32,7 +32,7 @@
 </mat-card>
 
 
-
+<!-- 
 <div *ngIf="blocks">
   <div *ngFor="let item of blocks">
       <mat-card  class="example-full-width" *ngFor="let trans of item.transactions">
@@ -50,4 +50,55 @@
   </div>
 
 </div>
-  
+
+-->
+<button mat-stroked-button (click)="reflesh()" color="primary">sorgu yaptıktan sonra buraya tıklayarak tabloyu yenileyin..</button>
+
+
+
+<div>
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+      
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef> time </th>
+          <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="user">
+          <th mat-header-cell *matHeaderCellDef> user </th>
+          <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="chassisNo">
+          <th mat-header-cell *matHeaderCellDef> chassisNo </th>
+          <td mat-cell *matCellDef="let element"> {{element.chassisNo}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="km">
+          <th mat-header-cell *matHeaderCellDef> km </th>
+          <td mat-cell *matCellDef="let element"> {{element.km}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="transaction">
+            <th mat-header-cell *matHeaderCellDef> transaction </th>
+            <td mat-cell *matCellDef="let element"> {{element.transaction}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="comment">
+              <th mat-header-cell *matHeaderCellDef> comment </th>
+              <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+            </ng-container>
+          
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+</div>

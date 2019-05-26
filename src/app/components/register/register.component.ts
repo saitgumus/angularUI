@@ -13,12 +13,12 @@ export class RegisterComponent implements OnInit {
   
   carModel = new Car('','','','','','','','','','');
 
-  yakit = ['benzin','dizel','benzin+lpg'];
+  yakit = ['benzin','dizel','benzin+lpg','hybrid','electric'];
 
 
   server_uri = 'https://node-test-238108.appspot.com';
 
-  nodes = ['https://node-test2-238819.appspot.com','https://node-test-238108.appspot.com','http://localhost:8080'];
+  nodes = ['https://node-test2-238819.appspot.com','https://node-test-238108.appspot.com','http://localhost:8080','https://node-test3.appspot.com'];
 
 
   constructor(private carService:CarService) { }

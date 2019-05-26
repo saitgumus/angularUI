@@ -36,4 +36,6 @@ export class TransactionService {
     return this.http.post<Block[]>(uri+'/queryTransaction',data,{headers:_headers});
   }
 
+  
+
 }

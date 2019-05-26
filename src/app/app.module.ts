@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { RegisterComponent } from './components/register/register.component';
 
 
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -22,7 +23,11 @@ import { MatInputModule } from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import { QueryComponent } from './components/query/query.component';
 import { UsersaveComponent } from './components/usersave/usersave.component';
-import { TransactionComponent } from './components/transaction/transaction.component';
+import { TransactionComponent, DialogLogin } from './components/transaction/transaction.component';
+import { MatDialogModule} from '@angular/material';
+import {MatTableModule} from '@angular/material/table';
+import { from } from 'rxjs';
+
 
 
 
@@ -39,7 +44,8 @@ import { TransactionComponent } from './components/transaction/transaction.compo
     RegisterComponent,
     QueryComponent,
     UsersaveComponent,
-    TransactionComponent
+    TransactionComponent,
+    DialogLogin
   ],
   imports: [
     BrowserModule,
@@ -54,8 +60,11 @@ import { TransactionComponent } from './components/transaction/transaction.compo
     MatSelectModule,
     MatButtonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatTableModule
   ],
+  entryComponents:[DialogLogin],
   providers: [],
   bootstrap: [AppComponent]
 })
